@@ -15,8 +15,9 @@ const App = () => {
             <CardContainer>
                 {
                     initialState != null &&
-                    Object.keys(initialState.quotes).map(key =>
+                    Object.keys(initialState.quotes).map((key,i) =>
                         <Card 
+                            key={i}
                             currSource={initialState.source} 
                             currDestiny={key.substr(3)} 
                             date={ moment(initialState.timestamp*1000).format('MMMM Do YYYY, h:mm:ss a')} 
