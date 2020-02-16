@@ -7,7 +7,6 @@ import moment from 'moment';
 
 const App = () => {
 
-    // Esto se descomenta
     const initialState = useInitialState();
 
     const [filter, setFilter] = useState("");
