@@ -1,19 +1,31 @@
 import React from 'react';
-
 import CardContainer from './components/CardContainer';
-import Card from './components/Card'
+import Card from './components/Card';
 
+import useInitialState from './hooks/useInitialState';
+import moment from 'moment';
 
-import './App.css';
+const App = () => {
 
-function App() {
-  return (
-    <div className="App">
-      <CardContainer>
-        <Card/>
-      </CardContainer>
-    </div>
-  );
+    const initialState = useInitialState();
+
+    return(
+        <div className="App">
+            <CardContainer>
+                {
+                    initialState != null &&
+                    Object.keys(initialState.quotes).map(key =>
+                        <Card 
+                            currSource={initialState.source} 
+                            currDestiny={key.substr(3)} 
+                            date={ moment(initialState.timestamp).format('MMMM Do YYYY, h:mm:ss a')} 
+                            value={initialState.quotes[key]}
+                            display={true}/>
+                    )
+                }
+            </CardContainer>
+        </div>
+    );
 }
 
 export default App;
