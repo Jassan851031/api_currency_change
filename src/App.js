@@ -8,6 +8,7 @@ import moment from 'moment';
 const App = () => {
 
     const initialState = useInitialState();
+    
 
     return(
         <div className="App">
@@ -18,9 +19,9 @@ const App = () => {
                         <Card 
                             currSource={initialState.source} 
                             currDestiny={key.substr(3)} 
-                            date={ moment(initialState.timestamp).format('MMMM Do YYYY, h:mm:ss a')} 
+                            date={ moment(initialState.timestamp*1000).format('MMMM Do YYYY, h:mm:ss a')} 
                             value={initialState.quotes[key]}
-                            display={true}/>
+                            />
                     )
                 }
             </CardContainer>

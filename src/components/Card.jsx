@@ -6,9 +6,9 @@ import '../assets/styles/components/Card.css';
  * Tarjeta donde se mostrará la información
  * @author Jorge
  */
-const Card = ({ currSource, currDestiny, date, value, display }) => {
+const Card = ({ currSource, currDestiny, date, value }) => {
+    
     return(
-        display &&
         <div id={currDestiny} className="col-sm-3 col-md-3 pb-4">
           <div className="card card-outline-info">
             <div className="card-block">
